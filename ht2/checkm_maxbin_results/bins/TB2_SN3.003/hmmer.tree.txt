@@ -1,0 +1,17 @@
+#                                                                            --- full sequence --- -------------- this domain -------------   hmm coord   ali coord   env coord
+# target name        accession   tlen query name           accession   qlen   E-value  score  bias   #  of  c-Evalue  i-Evalue  score  bias  from    to  from    to  from    to  acc description of target
+#------------------- ---------- ----- -------------------- ---------- ----- --------- ------ ----- --- --- --------- --------- ------ ----- ----- ----- ----- ----- ----- ----- ---- ---------------------
+NODE_615_length_6523_cov_10.860990_3 -            820 Ribosomal_L16        PF00252.13   133   1.2e-05   21.9   0.6   1   3     0.013        20    1.7   0.1    27    63   356   393   337   429 0.80 # 3170 # 5629 # -1 # ID=66_3;partial=00;start_type=ATG;rbs_motif=CCCCTG;rbs_spacer=6bp;gc_cont=0.336
+NODE_615_length_6523_cov_10.860990_3 -            820 Ribosomal_L16        PF00252.13   133   1.2e-05   21.9   0.6   2   3   0.00045      0.71    6.4   0.0    19    59   451   492   433   518 0.83 # 3170 # 5629 # -1 # ID=66_3;partial=00;start_type=ATG;rbs_motif=CCCCTG;rbs_spacer=6bp;gc_cont=0.336
+NODE_615_length_6523_cov_10.860990_3 -            820 Ribosomal_L16        PF00252.13   133   1.2e-05   21.9   0.6   3   3    0.0001      0.16    8.5   0.0    17    55   607   646   594   651 0.84 # 3170 # 5629 # -1 # ID=66_3;partial=00;start_type=ATG;rbs_motif=CCCCTG;rbs_spacer=6bp;gc_cont=0.336
+NODE_1063_length_3775_cov_31.551143_2 -             58 Ribosomal_L23        PF00276.15    92   0.00023   17.9   1.0   1   1   1.6e-07   0.00024   17.8   1.0    15    57     6    48     1    54 0.82 # 233 # 406 # 1 # ID=135_2;partial=00;start_type=ATG;rbs_motif=None;rbs_spacer=None;gc_cont=0.282
+#
+# Program:         hmmsearch
+# Version:         3.3.2 (Nov 2020)
+# Pipeline mode:   SEARCH
+# Query file:      /tmp/ebda4623-ff73-40db-8d5d-edf248668040
+# Target file:     checkm_maxbin_results/bins/TB2_SN3.003/genes.faa
+# Option settings: hmmsearch --domtblout checkm_maxbin_results/bins/TB2_SN3.003/hmmer.tree.txt --noali --notextw -E 0.1 --domE 0.1 --cpu 2 /tmp/ebda4623-ff73-40db-8d5d-edf248668040 checkm_maxbin_results/bins/TB2_SN3.003/genes.faa 
+# Current dir:     /home/team_218/metagenomics/ht2
+# Date:            Thu Dec 19 17:59:09 2024
+# [ok]
