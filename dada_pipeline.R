@@ -52,7 +52,29 @@ pca_df <- data.frame(Sample=rownames(asv_relative), PC1=pca$x[,1], PC2=pca$x[,2]
 ggplot(pca_df, aes(x=PC1, y=PC2)) +
   geom_point(size=3, alpha=0.7) +
   theme_minimal() +
-  labs(title="PCA of ASV Data", x="PC1", y="PC2")
+  labs(title="PCA", x="PC1", y="PC2")
+
+
+
+cosine_dist <- 1 - as.matrix(asv_relative) %*% t(as.matrix(asv_relative)) /
+  (sqrt(rowSums(asv_relative^2)) %*% t(sqrt(rowSums(asv_relative^2))))
+
+pcoa <- cmdscale(as.dist(cosine_dist), eig = TRUE, k = 2)
+
+pcoa_df <- data.frame(
+  Sample = rownames(asv_relative),
+  PC1 = pcoa$points[, 1],
+  PC2 = pcoa$points[, 2]
+)
+
+ggplot(pcoa_df, aes(x = PC1, y = PC2)) +
+  geom_point(size = 3, alpha = 0.7) +
+  theme_minimal() +
+  labs(
+    title = "PCA using Cosine Distance",
+    x = "PC1",
+    y = "PC2"
+  )
 
 
 bray_dist <- vegdist(asv_relative, method="bray")
@@ -68,7 +90,7 @@ pcoa_df <- data.frame(
 ggplot(pcoa_df, aes(x = PC1, y = PC2)) +
   geom_point(size=3, alpha=0.7) +
   theme_minimal() +
-  labs(title = "PCoA with Bray-Curtis", x = "PC 1", y = "PC 2")
+  labs(title = "PCA with Bray-Curtis", x = "PC1", y = "PC2")
 
 #Преобразование
 asv_ids <- paste0("ASV", seq_len(ncol(asv_table)))
@@ -187,4 +209,5 @@ top_taxa_by_cluster <- diversity_by_cluster %>%
   slice_max(TotalAbundance, n = 10) %>%
   ungroup()
 
+write.csv(top_taxa_by_cluster, file = "~/U_Sirius/metagenomics/data/top_taxa_by_cluster.csv", row.names = FALSE)
 
